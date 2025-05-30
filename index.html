@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Olivia Dal Pra</title>
+    <style>
+        
+/***************/
+/* GENERAL USE */
+/***************/
+
+.full-viewport {
+    width: 100%;
+    height: 100vh;
+    overflow-x: none;
+}
+
+.center-flex, .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column-flex, .flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-flex, .flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.expand {
+    flex: 1;
+}
+
+.parent-size {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/*********/
+/* STYLE */
+/*********/
+
+html, body {
+    margin: 0px;
+}
+
+#filter-list {
+    margin: 50px;
+}
+
+#filter-list > div {
+    padding: 20px;
+    background-color: grey;
+    cursor: pointer;
+}
+
+#filter-list > div.selected {
+    background-color: green;
+    color: white;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.gallery-item {
+    aspect-ratio: 4/3;
+    width: var(--item-width);
+    padding: 20px;
+    display: none;
+}
+
+.gallery-item.selected {
+    display: block;
+}
+
+.gallery-embed {
+    position: relative;
+    aspect-ratio: 16/9;
+    width: 100%;
+}
+
+    </style>
+<script>
+    function main()
+    {
+        update_gallery_width();
+        setInterval(update_gallery_width, 100);
+        set_filter("all");
+    }
+
+    function update_gallery_width()
+    {
+        let itemWidth = 600;
+        let columnCount = Math.max(1, Math.round(window.innerWidth / itemWidth));
+        let style = "";
+        for (var i = 0; i < columnCount; i++)
+            style += "auto ";
+        style[-1] = "";
+        document.getElementById("gallery").style.gridTemplateColumns = style;
+    }
+
+    function set_filter(newFilter)
+    {
+        newFilter = newFilter.toLowerCase();
+        var items = document.getElementsByClassName("gallery-item")
+        for (var i = 0; i < items.length; i++)
+        {
+            if (newFilter == "all" || items[i].classList.contains("tag-" + newFilter))
+            {
+                items[i].classList.add("selected");
+            }
+            else
+            {
+                items[i].classList.remove("selected");
+            }
+        }
+        items = document.getElementById("filter-list").children;
+        // alert(items)
+        for (var i = 0; i < items.length; i++)
+        {
+            if (items[i].innerText.toLowerCase() == newFilter)
+                items[i].classList.add("selected");
+            else
+                items[i].classList.remove("selected");
+        }
+    }
+</script>
+</head>
+<body onload="main();">
+    <!-- Header -->
+    <div class="full-viewport center-flex" style="background-color: lightgrey; background-image: url();">
+        <div style="text-align: center;">
+            <h1>Olivia Dal Pra</h1>
+            <h2>I make the movies, etc.</h2>
+            <div>
+                <a href="">My Reel</a>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio -->
+    <div>
+        <!-- Navigation -->
+        <div class="center-flex">
+            <div id="filter-list" class="row-flex">
+                <div onclick="set_filter(this.innerText);">All</div>
+                <div onclick="set_filter(this.innerText);">Writing</div>
+                <div onclick="set_filter(this.innerText);">Camera</div>
+                <div onclick="set_filter(this.innerText);">Other</div>
+            </div>
+        </div>
+        <!-- Gallery -->
+         <div id="gallery">
+            
+            <div class="tag-writing gallery-item flex-column selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div>
+                    <h3>Bunkers</h3>
+                    <p>A guy tries to get his roommates evicted.</p>
+                </div>
+            </div>
+
+            <div class="tag-writing gallery-item flex-column selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div>
+                    <h3>Bunkers</h3>
+                    <p>A guy tries to get his roommates evicted.</p>
+                </div>
+            </div>
+
+            <div class="tag-camera gallery-item flex-column selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div>
+                    <h3>Bunkers</h3>
+                    <p>A guy tries to get his roommates evicted.</p>
+                </div>
+            </div>
+
+            <div class="tag-writing gallery-item flex-column selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div>
+                    <h3>Bunkers</h3>
+                    <p>A guy tries to get his roommates evicted.</p>
+                </div>
+            </div>
+
+            <div class="tag-camera gallery-item flex-column selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div>
+                    <h3>Bunkers</h3>
+                    <p>A guy tries to get his roommates evicted.</p>
+                </div>
+            </div>
+
+            <div class="tag-camera gallery-item flex-column selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div>
+                    <h3>Bunkers</h3>
+                    <p>A guy tries to get his roommates evicted.</p>
+                </div>
+            </div>
+
+            <div class="tag-writing gallery-item flex-column selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div>
+                    <h3>Bunkers</h3>
+                    <p>A guy tries to get his roommates evicted.</p>
+                </div>
+            </div>
+
+            <div class="tag-other gallery-item flex-column selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div>
+                    <h3>Bunkers</h3>
+                    <p>A guy tries to get his roommates evicted.</p>
+                </div>
+            </div>
+
+         </div>
+    </div>
+    <!-- About -->
+     <div>
+        <h1 style="text-align: center;">About</h1>
+        <p style="width: 50%; margin-inline: auto; font-size: 150%;">
+            Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is 
+            Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is 
+            Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is 
+            Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is 
+            Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia.
+        </p>
+     </div>
+</body>
+</html>
