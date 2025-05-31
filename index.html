@@ -206,9 +206,17 @@ html, body {
                 },
                 events: {
                     // 'onReady': onPlayerReady,
-                    // 'onStateChange': onPlayerStateChange
+                    'onStateChange': onPlayerStateChange
                 }
                 });
+            }
+
+            function onPlayerStateChange(event)
+            {
+                if (event.data == 0)
+                {
+                    document.getElementById("player").style.display = "none";
+                }
             }
         </script>
     </div>
