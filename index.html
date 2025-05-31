@@ -49,20 +49,44 @@
 
 html, body {
     margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#reel-link {
+    text-decoration: none;
+    color: white;
+    background-color: #2a2;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 2em;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#reel-link:hover {
+    background-color: #2c2;
 }
 
 #filter-list {
     margin: 50px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 #filter-list > div {
     padding: 20px;
-    background-color: grey;
+    background-color: #ddd;
     cursor: pointer;
+    font-weight: bold;
+}
+
+#filter-list > div:hover {
+    background-color: #bbb;
 }
 
 #filter-list > div.selected {
-    background-color: green;
+    background-color: #2a2;
     color: white;
 }
 
@@ -124,7 +148,6 @@ html, body {
             }
         }
         items = document.getElementById("filter-list").children;
-        // alert(items)
         for (var i = 0; i < items.length; i++)
         {
             if (items[i].innerText.toLowerCase() == newFilter)
@@ -137,24 +160,24 @@ html, body {
 </head>
 <body onload="main();">
     <!-- Header -->
-    <div class="full-viewport center-flex" style="background-color: lightgrey; background-image: url();">
-        <div style="text-align: center;">
-            <h1>Olivia Dal Pra</h1>
-            <h2>I make the movies, etc.</h2>
+    <div class="full-viewport center-flex" style="background-color: black; overflow: hidden;">
+        <video id="header-video" class="parent-size" src="assets/images/let-it-burn.mp4" muted autoplay loop></video>
+        <div style="text-align: center; z-index: 1;">
+            <h1 style="font-size: 15vh; color: white; user-select: none;">Olivia Dal Pra</h1>
+            <!-- <h2>I make the movies, etc.</h2> -->
             <div>
-                <a href="">My Reel</a>
+                <span id="reel-link" style="overflow:hidden;"><iframe style="display:none;" class="parent-size" src="https://www.youtube.com/embed/wO61D9x6lNY?si=stkcCs214MLtYmg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>My Reel <svg height="1.2em" style="position:relative; top:0.25em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="white" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span>
             </div>
         </div>
     </div>
     <!-- Portfolio -->
     <div>
         <!-- Navigation -->
-        <div class="center-flex">
+        <div class="center-flex" style="user-select: none;">
             <div id="filter-list" class="row-flex">
                 <div onclick="set_filter(this.innerText);">All</div>
                 <div onclick="set_filter(this.innerText);">Writing</div>
-                <div onclick="set_filter(this.innerText);">Camera</div>
-                <div onclick="set_filter(this.innerText);">Other</div>
+                <div onclick="set_filter(this.innerText);">Cinematography</div>
             </div>
         </div>
         <!-- Gallery -->
@@ -243,7 +266,7 @@ html, body {
          </div>
     </div>
     <!-- About -->
-     <div>
+     <div style="background: url(assets/images/olivia.jpg); aspect-ratio:3/2; background-position: center; background-size: cover;">
         <h1 style="text-align: center;">About</h1>
         <p style="width: 50%; margin-inline: auto; font-size: 150%;">
             Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is Olivia is 
