@@ -184,7 +184,7 @@ html, body {
             <h1 style="font-size: 15vh; color: white; user-select: none; margin: 20px;">Olivia Dal Pra</h1>
             <h2 style="font-size: 4vh; color: white; user-select: none; margin: 20px;">Writer | Director | Cinematographer</h2>
             <div style="margin: 40px; text-shadow: none;">
-                <span id="reel-link" onclick="document.getElementById('player').style.display='block'; player.playVideo()">My Reel<!-- <svg height="1.2em" style="position:relative; top:0.25em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path fill="white" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>--></span>
+                <span id="reel-link" onclick="document.getElementById('player').style.display='block'; player.playVideo()">Watch Reel<!-- <svg height="1.2em" style="position:relative; top:0.25em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path fill="white" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>--></span>
             </div>
         </div>
         <div id="player" class="parent-size" style="z-index:10; display:none;"></div>
@@ -222,6 +222,7 @@ html, body {
     </div>
     <!-- Portfolio -->
     <div>
+        <h1 style="text-align: center; color: white; font-size: 3em; margin-bottom: 0px;">Selected Works</h1>
         <!-- Navigation -->
         <div class="center-flex" style="user-select: none;">
             <div id="filter-list" class="row-flex">
@@ -266,11 +267,30 @@ html, body {
          </div>
     </div>
     <!-- About -->
-     <div style="background: url(assets/images/olivia.jpg); aspect-ratio:3/2; background-position: center; background-size: cover;">
-        <h1 style="text-align: center;">About</h1>
-        <p style="width: 50%; margin-inline: auto; font-size: 150%;">
-            Olivia Dal Pra is a filmmaker from Northeast Ohio. She studied film at Kent State University, during which she won multiple university honors and scholarships for projects she wrote, shot, and/or directed, such as "Cloud Nine", "Powerball" and "Bunkers". After graduation, she worked various positions before moving home to take care of her grandmother with Alzheimer's, the inspiration for her upcoming project "The Gap". When not filming, Olivia is writing poems, watching hockey, and chilling with her work buddy Grandma.
-        </p>
+     <div style="background: url(assets/images/olivia.jpg); background-position: center; background-size: cover; padding: 50px;">
+        <div style="width: 50%; margin-left: auto;">
+            <h1 style="text-align: center; color: white; text-shadow: black 2px 2px 20px; font-size: 3em;">About</h1>
+            <div style="font-size: 150%; padding: 20px; background-color: rgba(17, 54, 135, 1.0);">
+                <div style="line-height: 150%;">
+                    Olivia Dal Pra is a filmmaker from Northeast Ohio. She studied film at Kent State University, during which she won multiple university honors and scholarships for projects she wrote, shot, and/or directed, such as "Cloud Nine", "Powerball" and "Bunkers". She also served as the managing director of the Female Filmmaker's Initiative, an organization dedicated to promoting diversity behind the camera. After graduation, she worked various positions before moving home to take care of her grandmother with Alzheimer's, the inspiration for her upcoming project "The Gap". When not filming, Olivia is writing poems, watching hockey, and chilling with her work buddy Grandma.
+                </div>
+                <h3 id="liam-scramb" style="text-align: center;">
+                    Email loading...
+                </h3>
+                <script>
+                    function do_thing()
+                    {
+                        const term = "2@1r1464@3v4ioial8u41@ke2u";
+                        const alpha = "1234567890.@qwertyuiopasdfghjklzxcvbnm";
+                        let new_term = "";
+                        for (var i = 0; i < term.length; i++)
+                            new_term += alpha[(alpha.indexOf(term[i]) + 19) % 38];
+                        document.getElementById("liam-scramb").innerText = new_term;
+                    }
+                    setTimeout(do_thing, 2000);
+                </script>
+            </div>
+        </div>
      </div>
 </body>
 </html>
