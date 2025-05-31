@@ -106,10 +106,21 @@ html, body {
     display: block;
 }
 
+.gallery-item * {
+    margin: 5px;
+}
+
 .gallery-embed {
     position: relative;
     aspect-ratio: 16/9;
     width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.gallery-embed iframe {
+    aspect-ratio: 16/9 !important;
 }
 
     </style>
@@ -166,9 +177,33 @@ html, body {
             <h1 style="font-size: 15vh; color: white; user-select: none;">Olivia Dal Pra</h1>
             <!-- <h2>I make the movies, etc.</h2> -->
             <div>
-                <span id="reel-link" style="overflow:hidden;"><iframe style="display:none;" class="parent-size" src="https://www.youtube.com/embed/wO61D9x6lNY?si=stkcCs214MLtYmg8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>My Reel <svg height="1.2em" style="position:relative; top:0.25em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="white" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span>
+                <span id="reel-link" onclick="document.getElementById('player').style.display='block'; player.playVideo()">My Reel <svg height="1.2em" style="position:relative; top:0.25em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="white" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span>
             </div>
         </div>
+        <div id="player" class="parent-size" style="z-index:10; display:none;"></div>
+        <script>
+            var tag = document.createElement('script');
+
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'S4AEbw2V5Qk',
+                playerVars: {
+                    'playsinline': 1
+                },
+                events: {
+                    // 'onReady': onPlayerReady,
+                    // 'onStateChange': onPlayerStateChange
+                }
+                });
+            }
+        </script>
     </div>
     <!-- Portfolio -->
     <div>
@@ -193,73 +228,23 @@ html, body {
                 </div>
             </div>
 
-            <div class="tag-writing gallery-item flex-column selected">
+            <div class="tag-writing tag-cinematography gallery-item flex-column selected">
                 <div class="gallery-embed">
-<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+<iframe src="https://player.vimeo.com/video/822537020?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="POWERBALL | Short Film"></iframe>
                 </div>
                 <div>
-                    <h3>Bunkers</h3>
-                    <p>A guy tries to get his roommates evicted.</p>
+                    <h3>Powerball</h3>
+                    <p>Lottery family drama</p>
                 </div>
             </div>
 
-            <div class="tag-camera gallery-item flex-column selected">
+            <div class="tag-writing tag-cinematography gallery-item flex-column selected">
                 <div class="gallery-embed">
-<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+<iframe src="https://player.vimeo.com/video/781219114?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Cloud Nine (12092022)"></iframe>
                 </div>
                 <div>
-                    <h3>Bunkers</h3>
-                    <p>A guy tries to get his roommates evicted.</p>
-                </div>
-            </div>
-
-            <div class="tag-writing gallery-item flex-column selected">
-                <div class="gallery-embed">
-<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
-                </div>
-                <div>
-                    <h3>Bunkers</h3>
-                    <p>A guy tries to get his roommates evicted.</p>
-                </div>
-            </div>
-
-            <div class="tag-camera gallery-item flex-column selected">
-                <div class="gallery-embed">
-<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
-                </div>
-                <div>
-                    <h3>Bunkers</h3>
-                    <p>A guy tries to get his roommates evicted.</p>
-                </div>
-            </div>
-
-            <div class="tag-camera gallery-item flex-column selected">
-                <div class="gallery-embed">
-<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
-                </div>
-                <div>
-                    <h3>Bunkers</h3>
-                    <p>A guy tries to get his roommates evicted.</p>
-                </div>
-            </div>
-
-            <div class="tag-writing gallery-item flex-column selected">
-                <div class="gallery-embed">
-<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
-                </div>
-                <div>
-                    <h3>Bunkers</h3>
-                    <p>A guy tries to get his roommates evicted.</p>
-                </div>
-            </div>
-
-            <div class="tag-other gallery-item flex-column selected">
-                <div class="gallery-embed">
-<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
-                </div>
-                <div>
-                    <h3>Bunkers</h3>
-                    <p>A guy tries to get his roommates evicted.</p>
+                    <h3>Cloud Nine</h3>
+                    <p>Parasocial streamer relationship</p>
                 </div>
             </div>
  
