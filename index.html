@@ -52,9 +52,10 @@ html, body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #121212;
     color: white;
+    scroll-behavior: smooth;
 }
 
-#reel-link {
+.reel-link {
     text-decoration: none;
     color: white;
     background-color: rgb(17, 54, 135);
@@ -65,9 +66,10 @@ html, body {
     user-select: none;
     cursor: pointer;
     overflow: hidden;
+    width: max-content;
 }
 
-#reel-link:hover {
+.reel-link:hover {
     background-color: rgb(10, 81, 182);
 }
 
@@ -97,29 +99,61 @@ html, body {
 }
 
 #gallery {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    
 }
 
 .gallery-item {
-    aspect-ratio: 4/3;
-    width: var(--item-width);
+    width: calc(100% - 40px);
     padding: 20px;
+    height: 400px;
     display: none;
+    border-bottom: solid 1px white;
 }
 
 .gallery-item.selected {
-    display: block;
+    display: flex;
+    flex-direction: row;
 }
 
 .gallery-item * {
     margin: 5px;
 }
 
+.award-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.award-wrapper > div {
+    position: absolute;
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.award-list {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+}
+
+.award-list > div {
+    height: 100%;
+    width: content;
+    position: relative;
+    margin: 0px;
+}
+
+.award-list > img {
+    /* position: absolute; */
+    height: 200px;
+    filter: invert();
+    margin: 0px;
+}
+
 .gallery-embed {
     position: relative;
     aspect-ratio: 16/9;
-    width: 100%;
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -133,8 +167,8 @@ html, body {
 <script>
     function main()
     {
-        update_gallery_width();
-        setInterval(update_gallery_width, 100);
+        // update_gallery_width();
+        // setInterval(update_gallery_width, 100);
         set_filter("all");
     }
 
@@ -183,8 +217,12 @@ html, body {
         <div style="text-align: center; z-index: 1; text-shadow: black 2px 2px 20px;">
             <h1 style="font-size: 15vh; color: white; user-select: none; margin: 20px;">Olivia Dal Pra</h1>
             <h2 style="font-size: 4vh; color: white; user-select: none; margin: 20px;">Writer | Director | Cinematographer</h2>
-            <div style="margin: 40px; text-shadow: none;">
-                <span id="reel-link" onclick="document.getElementById('player').style.display='block'; player.playVideo()">Watch Reel<!-- <svg height="1.2em" style="position:relative; top:0.25em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.<path fill="white" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>--></span>
+            <div style="margin: 40px; text-shadow: none; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px;">
+                <span id="reel-link" class="reel-link" onclick="document.getElementById('player').style.display='block'; player.playVideo()">Watch Reel</span>
+                <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 10px;">
+                    <a class="reel-link" href="#portfolio">Portfolio</a>
+                    <a class="reel-link" href="#about">About</a>
+                </div>
             </div>
         </div>
         <div id="player" class="parent-size" style="z-index:10; display:none;"></div>
@@ -221,7 +259,7 @@ html, body {
         </script>
     </div>
     <!-- Portfolio -->
-    <div>
+    <div id="portfolio">
         <h1 style="text-align: center; color: white; font-size: 3em; margin-bottom: 0px;">Selected Works</h1>
         <!-- Navigation -->
         <div class="center-flex" style="user-select: none;">
@@ -234,40 +272,105 @@ html, body {
         <!-- Gallery -->
          <div id="gallery">
             
-            <div class="tag-writing gallery-item flex-column selected">
+            <div class="tag-writing gallery-item selected">
                 <div class="gallery-embed">
 <iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
                 </div>
-                <div>
-                    <h3>Bunkers</h3>
-                    <p>A guy tries to get his roommates evicted.</p>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Bunkers</h1>
+                    <h2>Director - Writer</h2>
+                    <p>A neurotic homeschool grad tries to get his awful roommates kicked out. Director, Writer. Winner of Best Actor and Best Editing at the 2024 Flash Film Festival</p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                                <img src="assets/images/awards/BEST_ACTOR_-_Flash_Films_Festival_-_2024.png" alt="">
+                                <img src="assets/images/awards/BEST_EDITING_-_Flash_Films_Festival_-_2024.png" alt="">
+                                <img src="assets/images/awards/OFFICIAL_SELECTION_-_PNN_Academy_Comedy_Film_Festival_-_2025.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="tag-writing tag-cinematography gallery-item flex-column selected">
-                <div class="gallery-embed">
-<iframe src="https://player.vimeo.com/video/822537020?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="POWERBALL | Short Film"></iframe>
-                </div>
-                <div>
-                    <h3>Powerball</h3>
-                    <p>Lottery family drama</p>
-                </div>
-            </div>
-
-            <div class="tag-writing tag-cinematography gallery-item flex-column selected">
+            
+            <div class="tag-writing tag-cinematography gallery-item selected">
                 <div class="gallery-embed">
 <iframe src="https://player.vimeo.com/video/781219114?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Cloud Nine (12092022)"></iframe>
                 </div>
-                <div>
-                    <h3>Cloud Nine</h3>
-                    <p>Parasocial streamer relationship</p>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Cloud Nine</h1>
+                    <h2>Co-Director - Writer - Cinematographer</h2>
+                    <p>A girl falls into a parasocial relationship with a streamer.  Co-Director, Writer, Cinematographer. Winner of Best Editing and Best Directing at the 2023 Flash Film Festival</p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                                <img src="assets/images/awards/BEST_DIRECTING_-_Flash_Films_Festival_-_2023.png" alt="">
+                                <img src="assets/images/awards/BEST_EDITING_-_Flash_Films_Festival_-_2023.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-writing tag-cinematography gallery-item selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/822537020?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="POWERBALL | Short Film"></iframe>
+                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Powerball</h1>
+                    <h2>Co-Writer - Cinematographer - Re-Recording Mixer</h2>
+                    <p>A young man wins the lottery at Christmas dinner. Co-writer, Cinematographer, Re-Recording mixer.  Winner of Best Screenplay, Best Sound Design, and Audience Favorite at the 2023 Flash Film Festival. Official Selection for the HIghland Square Film Festival and the Short. Sweet. Film Festival.</p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                                <img src="assets/images/awards/BEST_SCREENPLAY_-_Flash_Films_Festival_-_2023.png" alt="">
+                                <img src="assets/images/awards/BEST_SOUND_DESIGN_-_Flash_Films_Festival_-_2023.png" alt="">
+                                <img src="assets/images/awards/OFFICIAL_SELECTION_-_Highland_Square_Film_Festival_-_2024.png" alt="">
+                                <img src="assets/images/awards/Official_Selection_2024.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-cinematography gallery-item selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/943373879?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Intertwined FINAL CUT"></iframe>
+                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Intertwined</h1>
+                    <h2>Cinematographer</h2>
+                    <p></p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-cinematography gallery-item selected">
+                <div class="gallery-embed">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/LKbWSAMGpIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Selfless Mind</h1>
+                    <h2>Cinematographer</h2>
+                    <p></p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                            
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
  
          </div>
     </div>
     <!-- About -->
-     <div style="background: url(assets/images/olivia.jpg); background-position: center; background-size: cover; padding: 50px;">
+     <div id="about" style="background: url(assets/images/olivia.jpg); background-position: center; background-size: cover; padding: 50px;">
         <div style="width: 50%; margin-left: auto;">
             <h1 style="text-align: center; color: white; text-shadow: black 2px 2px 20px; font-size: 3em;">About</h1>
             <div style="font-size: 150%; padding: 20px; background-color: rgba(17, 54, 135, 1.0);">
