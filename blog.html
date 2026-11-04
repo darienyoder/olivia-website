@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Olivia Dal Pra</title>
+
+    <style>
+
+/***************/
+/* GENERAL USE */
+/***************/
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #121212;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/*********/
+/* HEADER */
+/*********/
+
+#header {
+    background-color: #080808;
+    padding: 45px 7% 35px;
+    border-bottom: 1px solid #444;
+}
+
+#header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+#header-top a {
+    color: #91afe2;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+#header-top a:hover {
+    color: white;
+}
+
+#masthead {
+    text-align: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 20px 0px;
+}
+
+#masthead h1 {
+    margin: 0;
+    font-size: clamp(2.5em, 7vw, 5.5em);
+    font-weight: bold;
+    letter-spacing: -3px;
+    line-height: 1.1;
+}
+
+#masthead p {
+    margin: 15px 0px 0px;
+    color: #aaa;
+    font-size: 0.85em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#header-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    color: #888;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/************/
+/* INTRODUCTION */
+/************/
+
+#introduction {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 25px 35px;
+}
+
+#introduction h2 {
+    font-size: 1.8em;
+    margin: 0px 0px 12px;
+}
+
+#introduction p {
+    color: #aaa;
+    font-size: 0.95em;
+    line-height: 1.8;
+    max-width: 750px;
+}
+
+/*************/
+/* POST LIST */
+/*************/
+
+#posts {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0px 25px 80px;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 0px;
+    border-top: 1px solid #383838;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+.post:last-child {
+    border-bottom: 1px solid #383838;
+}
+
+.post:hover .post-title {
+    color: #91afe2;
+}
+
+.post-image {
+    flex: 0 0 260px;
+    height: 160px;
+    overflow: hidden;
+    background-color: #252525;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.post:hover .post-image img {
+    transform: scale(1.035);
+}
+
+.post-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.post-number {
+    color: #7898d0;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.post-title {
+    font-size: 1.65em;
+    line-height: 1.35;
+    font-weight: bold;
+    margin: 0px 0px 12px;
+    transition: color 0.2s;
+}
+
+.post-description {
+    color: #aaa;
+    font-size: 0.9em;
+    line-height: 1.7;
+    margin: 0px;
+}
+
+.post-read {
+    display: inline-block;
+    margin-top: 15px;
+    color: #91afe2;
+    font-size: 0.75em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/*********/
+/* FOOTER */
+/*********/
+
+#footer {
+    background-color: #080808;
+    border-top: 1px solid #383838;
+    padding: 30px 20px;
+    text-align: center;
+    color: #777;
+    font-size: 0.8em;
+}
+
+#footer a {
+    color: #91afe2;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: white;
+}
+
+/**************/
+/* RESPONSIVE */
+/**************/
+
+@media (max-width: 650px) {
+
+    #header {
+        padding: 30px 20px 25px;
+    }
+
+    #header-top {
+        margin-bottom: 25px;
+    }
+
+    #masthead h1 {
+        letter-spacing: -1.5px;
+    }
+
+    #masthead p {
+        font-size: 0.7em;
+        letter-spacing: 1px;
+    }
+
+    #header-bottom {
+        font-size: 0.65em;
+    }
+
+    #introduction {
+        padding: 35px 20px 25px;
+    }
+
+    #introduction h2 {
+        font-size: 1.5em;
+    }
+
+    #posts {
+        padding: 0px 20px 50px;
+    }
+
+    .post {
+        gap: 18px;
+        padding: 22px 0px;
+        align-items: flex-start;
+    }
+
+    .post-image {
+        flex: 0 0 115px;
+        height: 115px;
+    }
+
+    .post-title {
+        font-size: 1.05em;
+        margin-bottom: 8px;
+    }
+
+    .post-description {
+        font-size: 0.8em;
+        line-height: 1.5;
+    }
+
+    .post-read {
+        margin-top: 10px;
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 380px) {
+    .post {
+        gap: 12px;
+    }
+
+    .post-image {
+        flex-basis: 95px;
+        height: 105px;
+    }
+
+    .post-title {
+        font-size: 0.95em;
+    }
+}
+
+
+/**********************/
+/* ADDITIONAL NAVIGATION */
+/**********************/
+
+#extra-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+    background-color: #121212;
+}
+
+#extra-navigation a {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: rgb(17, 54, 135);
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#extra-navigation a:hover {
+    background-color: rgb(10, 81, 182);
+}
+
+@media (max-width: 500px) {
+    #extra-navigation {
+        gap: 12px;
+        padding: 25px 15px;
+    }
+
+    #extra-navigation a {
+        padding: 12px 18px;
+        font-size: 0.85em;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Introduction -->
+
+    <section id="introduction">
+
+        <h1 style="text-align: center;">Comedy Prose and Poetry by Olivia Dal Pra</h2>
+    </section>
+
+
+    <!-- Blog Posts -->
+
+    <main id="posts">
+
+        <!-- Post -->
+
+        <a class="post" href="posts/post-1.html">
+
+            <div class="post-image">
+                <img src="assets/images/blog/post-1.jpg"
+                     alt="Post 1 thumbnail">
+            </div>
+
+            <div class="post-content">
+
+                <h2 class="post-title">
+                    Patrick Stewart, Not the Gay One, Dies at 86
+                </h2>
+
+                <p class="post-description">
+                    Beloved actor Sir Pat Stew, who did Star Trek and some other stuff, died (sad).
+                </p>
+
+                <span class="post-read">READ ARTICLE →</span>
+
+            </div>
+
+        </a>
+
+        <a class="post" href="posts/post-1.html">
+
+            <div class="post-image">
+                <img src="assets/images/blog/post-1.jpg"
+                     alt="Post 1 thumbnail">
+            </div>
+
+            <div class="post-content">
+
+                <h2 class="post-title">
+                    Patrick Stewart, Not the Gay One, Dies at 86
+                </h2>
+
+                <p class="post-description">
+                    Beloved actor Sir Pat Stew, who did Star Trek and some other stuff, died (sad).
+                </p>
+
+                <span class="post-read">READ ARTICLE →</span>
+
+            </div>
+
+        </a>
+
+        <a class="post" href="posts/post-1.html">
+
+            <div class="post-image">
+                <img src="assets/images/blog/post-1.jpg"
+                     alt="Post 1 thumbnail">
+            </div>
+
+            <div class="post-content">
+
+                <h2 class="post-title">
+                    Patrick Stewart, Not the Gay One, Dies at 86
+                </h2>
+
+                <p class="post-description">
+                    Beloved actor Sir Pat Stew, who did Star Trek and some other stuff, died (sad).
+                </p>
+
+                <span class="post-read">READ ARTICLE →</span>
+
+            </div>
+
+        </a>
+
+    </main>
+
+
+    <!-- Footer -->
+
+<div id="extra-navigation">
+    <a href="\">Home</a>
+    <a href="film.html">Film Work</a>
+</div>
+<br><Br><br>
+    
+</body>
+</html>

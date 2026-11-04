@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Film Work | Olivia Dal Pra</title>
+    <style>
+
+/***************/
+/* GENERAL USE */
+/***************/
+
+.full-viewport {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.center-flex, .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column-flex, .flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-flex, .flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.expand {
+    flex: 1;
+}
+
+.parent-size {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/*********/
+/* STYLE */
+/*********/
+
+html, body {
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #121212;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+.reel-link {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(17, 54, 135);
+    box-shadow: black 2px 2px 20px;
+    padding: 10px 20px;
+    font-size: 2em;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    width: max-content;
+}
+
+.reel-link:hover {
+    background-color: rgb(10, 81, 182);
+}
+
+/*************/
+/* PORTFOLIO */
+/*************/
+
+#portfolio {
+    padding: 35px 5% 80px;
+}
+
+#portfolio > h1 {
+    margin-top: 20px;
+    margin-bottom: 15px !important;
+    font-size: 3em;
+    letter-spacing: -1.5px;
+}
+
+#filter-list {
+    margin: 30px 0px 45px;
+    overflow: hidden;
+    gap: 2px;
+    background-color: #292929;
+}
+
+#filter-list > div {
+    padding: 13px 22px;
+    background-color: #292929;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #bcbcbc;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#filter-list > div:hover {
+    background-color: #444;
+    color: white;
+}
+
+#filter-list > div.selected {
+    background-color: rgb(17, 54, 135);
+    color: white;
+}
+
+#filter-list > div.selected:hover {
+    background-color: rgb(10, 81, 182);
+}
+
+#gallery {
+    display: flex;
+    flex-direction: column;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 45px 0px;
+    min-height: 340px;
+    height: auto;
+    gap: 40px;
+    align-items: stretch;
+    border-bottom: 1px solid #383838;
+}
+
+.gallery-item:first-child {
+    border-top: 1px solid #383838;
+}
+
+.gallery-item.selected {
+    display: flex;
+    flex-direction: row;
+}
+
+.gallery-item > * {
+    margin: 0px;
+}
+
+.gallery-embed {
+    position: relative;
+    flex: 1.15;
+    min-width: 0;
+    align-self: center;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #080808;
+}
+
+.gallery-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9 !important;
+    border: none;
+}
+
+.gallery-item > div:nth-child(2) {
+    flex: 0.85;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 0px;
+}
+
+.gallery-item h1 {
+    margin: 0px 0px 10px;
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+}
+
+.gallery-item h2 {
+    margin: 0px 0px 20px;
+    color: #7898d0;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.gallery-item p {
+    margin: 0px 0px 25px;
+    color: #c5c5c5;
+    font-size: 0.95em;
+    line-height: 1.85;
+    max-width: 580px;
+}
+
+/**********/
+/* AWARDS */
+/**********/
+
+.award-wrapper {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 65px;
+    margin-top: auto;
+}
+
+.award-wrapper > div {
+    position: absolute;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #555 transparent;
+}
+
+.award-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: 0px;
+    height: 100%;
+}
+
+.award-list > img {
+    height: 90px;
+    width: auto;
+    max-width: 130px;
+    object-fit: contain;
+    filter: invert();
+    opacity: 0.9;
+    margin: 0px;
+    transition: opacity 0.2s;
+}
+
+.award-list > img:hover {
+    opacity: 1;
+}
+
+/************/
+/* RESPONSIVE */
+/************/
+
+@media (max-width: 900px) {
+    #portfolio {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .gallery-item {
+        gap: 25px;
+        padding: 35px 0px;
+    }
+
+    .gallery-item h1 {
+        font-size: 1.7em;
+    }
+
+    .gallery-item p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 650px) {
+    #portfolio {
+        padding: 25px 20px 55px;
+    }
+
+    #portfolio > h1 {
+        font-size: 2.3em;
+    }
+
+    #filter-list {
+        margin: 25px 0px 30px;
+        max-width: 100%;
+    }
+
+    #filter-list > div {
+        padding: 12px 14px;
+        font-size: 0.75em;
+    }
+
+    .gallery-item.selected {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .gallery-item {
+        padding: 30px 0px;
+    }
+
+    .gallery-embed {
+        flex: none;
+        width: 100%;
+    }
+
+    .gallery-item > div:nth-child(2) {
+        flex: none;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .gallery-item h1 {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+
+    .gallery-item h2 {
+        margin-bottom: 14px;
+        font-size: 0.78em;
+    }
+
+    .gallery-item p {
+        font-size: 0.9em;
+        line-height: 1.75;
+        margin-bottom: 18px;
+    }
+
+    .award-wrapper {
+        min-height: 60px;
+        flex: none;
+    }
+
+    .award-list > img {
+        height: 70px;
+    }
+}
+
+
+/*******************/
+/* RECENT ARTICLE */
+/*******************/
+
+#recent-article {
+    padding: 55px 8%;
+    background-color: #1b1b1b;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+}
+
+#recent-article > div {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#recent-article h3 {
+    margin: 0px 0px 15px;
+    color: #7898d0;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+#recent-article h2 {
+    margin: 0px;
+    font-size: 1.8em;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+#recent-article a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#recent-article a:hover {
+    color: #91afe2;
+}
+
+#recent-article p {
+    margin: 12px 0px 0px;
+    max-width: 750px;
+    color: #aaa;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+    #recent-article {
+        padding: 35px 25px;
+    }
+
+    #recent-article h2 {
+        font-size: 1.4em;
+    }
+
+    #recent-article p {
+        font-size: 0.88em;
+    }
+}
+
+
+/*******************/
+/* RECENT ARTICLE */
+/*******************/
+
+#recent-article {
+    padding: 45px 8%;
+    background-color: #181818;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+}
+
+#recent-article > div {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#recent-article h3 {
+    margin: 0px 0px 12px;
+    color: #91afe2;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#recent-article h2 {
+    margin: 0px;
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1.35;
+}
+
+#recent-article a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#recent-article a:hover {
+    color: #91afe2;
+}
+
+#recent-article p {
+    margin: 12px 0px 0px;
+    max-width: 750px;
+    color: #aaa;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+#recent-article .article-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: #91afe2;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#recent-article .article-link:hover {
+    color: white;
+}
+
+@media (max-width: 650px) {
+    #recent-article {
+        padding: 35px 25px;
+    }
+
+    #recent-article h2 {
+        font-size: 1.5em;
+    }
+
+    #recent-article p {
+        font-size: 0.88em;
+    }
+}
+
+
+/**********************/
+/* ADDITIONAL NAVIGATION */
+/**********************/
+
+#extra-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+    background-color: #121212;
+}
+
+#extra-navigation a {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: rgb(17, 54, 135);
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#extra-navigation a:hover {
+    background-color: rgb(10, 81, 182);
+}
+
+@media (max-width: 500px) {
+    #extra-navigation {
+        gap: 12px;
+        padding: 25px 15px;
+    }
+
+    #extra-navigation a {
+        padding: 12px 18px;
+        font-size: 0.85em;
+    }
+}
+
+
+    </style>
+<script>
+    function main()
+    {
+        // update_gallery_width();
+        // setInterval(update_gallery_width, 100);
+        set_filter("all");
+    }
+
+    function update_gallery_width()
+    {
+        let itemWidth = 600;
+        let columnCount = Math.max(1, Math.round(window.innerWidth / itemWidth));
+        let style = "";
+        for (var i = 0; i < columnCount; i++)
+            style += "auto ";
+        style[-1] = "";
+        document.getElementById("gallery").style.gridTemplateColumns = style;
+    }
+
+    function set_filter(newFilter)
+    {
+        newFilter = newFilter.toLowerCase();
+        var items = document.getElementsByClassName("gallery-item")
+        for (var i = 0; i < items.length; i++)
+        {
+            if (newFilter == "all" || items[i].classList.contains("tag-" + newFilter))
+            {
+                items[i].classList.add("selected");
+            }
+            else
+            {
+                items[i].classList.remove("selected");
+            }
+        }
+        items = document.getElementById("filter-list").children;
+        for (var i = 0; i < items.length; i++)
+        {
+            if (items[i].innerText.toLowerCase() == newFilter)
+                items[i].classList.add("selected");
+            else
+                items[i].classList.remove("selected");
+        }
+    }
+</script>
+</head>
+<body onload="main();">
+
+    <!-- Portfolio -->
+    <div id="portfolio">
+        <h1 style="text-align: center; color: white; font-size: 3em; margin-bottom: 0px;">Selected Works</h1>
+        <!-- Navigation -->
+        <div class="center-flex" style="user-select: none;">
+            <div id="filter-list" class="row-flex">
+                <div onclick="set_filter(this.innerText);">All</div>
+                <div onclick="set_filter(this.innerText);">Writing</div>
+                <div onclick="set_filter(this.innerText);">Cinematography</div>
+            </div>
+        </div>
+        <!-- Gallery -->
+         <div id="gallery">
+            
+            <div class="tag-writing gallery-item selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/940097793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="BUNKERS | Pilot"></iframe>
+                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Bunkers</h1>
+                    <h2>Director - Writer</h2>
+                    <p>A neurotic homeschool grad tries to get his awful roommates kicked out. Director, Writer. Winner of Best Actor and Best Editing at the 2024 Flash Film Festival</p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                                <img src="assets/images/awards/BEST_ACTOR_-_Flash_Films_Festival_-_2024.png" alt="">
+                                <img src="assets/images/awards/BEST_EDITING_-_Flash_Films_Festival_-_2024.png" alt="">
+                                <img src="assets/images/awards/OFFICIAL_SELECTION_-_PNN_Academy_Comedy_Film_Festival_-_2025.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-writing tag-cinematography gallery-item selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/781219114?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Cloud Nine (12092022)"></iframe>
+                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Cloud Nine</h1>
+                    <h2>Co-Director - Writer - Cinematographer</h2>
+                    <p>A girl falls into a parasocial relationship with a streamer.  Co-Director, Writer, Cinematographer. Winner of Best Editing and Best Directing at the 2023 Flash Film Festival</p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                                <img src="assets/images/awards/BEST_DIRECTING_-_Flash_Films_Festival_-_2023.png" alt="">
+                                <img src="assets/images/awards/BEST_EDITING_-_Flash_Films_Festival_-_2023.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-writing tag-cinematography gallery-item selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/822537020?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="POWERBALL | Short Film"></iframe>
+                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Powerball</h1>
+                    <h2>Co-Writer - Cinematographer - Re-Recording Mixer</h2>
+                    <p>A young man wins the lottery at Christmas dinner. Co-writer, Cinematographer, Re-Recording mixer.  Winner of Best Screenplay, Best Sound Design, and Audience Favorite at the 2023 Flash Film Festival. Official Selection for the Highland Square Film Festival and the Short. Sweet. Film Festival.</p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                                <img src="assets/images/awards/BEST_SCREENPLAY_-_Flash_Films_Festival_-_2023.png" alt="">
+                                <img src="assets/images/awards/BEST_SOUND_DESIGN_-_Flash_Films_Festival_-_2023.png" alt="">
+                                <img src="assets/images/awards/OFFICIAL_SELECTION_-_Highland_Square_Film_Festival_-_2024.png" alt="">
+                                <img src="assets/images/awards/Official_Selection_2024.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-cinematography gallery-item selected">
+                <div class="gallery-embed">
+<iframe src="https://player.vimeo.com/video/943373879?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Intertwined FINAL CUT"></iframe>
+                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Intertwined</h1>
+                    <h2>Cinematographer</h2>
+                    <p>Two stranger's lives intersect in a way that neither of them expect.</p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tag-cinematography gallery-item selected">
+                <div class="gallery-embed">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/LKbWSAMGpIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </div>
+                <div style="display: flex; flex-direction:column;">
+                    <h1>Selfless Mind</h1>
+                    <h2>Cinematographer</h2>
+                    <p>A young woman struggles to balance her extreme empathy and her own identity.</p>
+                    <div class="award-wrapper">
+                        <div>
+                            <div class="award-list">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+         </div>
+    </div>
+
+<div id="extra-navigation">
+    <a href="/">Home</a>
+    <a href="film.html">Film Work</a>
+</div>
+<br><Br><br>
+    
+</body>
+</html>

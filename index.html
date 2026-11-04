@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Olivia Dal Pra</title>
     <style>
-        
+
 /***************/
 /* GENERAL USE */
 /***************/
@@ -12,7 +12,7 @@
 .full-viewport {
     width: 100%;
     height: 100vh;
-    overflow-x: none;
+    overflow-x: hidden;
 }
 
 .center-flex, .flex-center {
@@ -60,7 +60,6 @@ html, body {
     color: white;
     background-color: rgb(17, 54, 135);
     box-shadow: black 2px 2px 20px;
-    /* border-radius: 20px; */
     padding: 10px 20px;
     font-size: 2em;
     user-select: none;
@@ -73,25 +72,46 @@ html, body {
     background-color: rgb(10, 81, 182);
 }
 
+/*************/
+/* PORTFOLIO */
+/*************/
+
+#portfolio {
+    padding: 35px 5% 80px;
+}
+
+#portfolio > h1 {
+    margin-top: 20px;
+    margin-bottom: 15px !important;
+    font-size: 3em;
+    letter-spacing: -1.5px;
+}
+
 #filter-list {
-    margin: 50px;
-    /* border-radius: 10px; */
+    margin: 30px 0px 45px;
     overflow: hidden;
+    gap: 2px;
+    background-color: #292929;
 }
 
 #filter-list > div {
-    padding: 20px;
-    background-color: #444;
+    padding: 13px 22px;
+    background-color: #292929;
     cursor: pointer;
     font-weight: bold;
+    font-size: 0.9em;
+    color: #bcbcbc;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #filter-list > div:hover {
-    background-color: #888;
+    background-color: #444;
+    color: white;
 }
 
 #filter-list > div.selected {
     background-color: rgb(17, 54, 135);
+    color: white;
 }
 
 #filter-list > div.selected:hover {
@@ -99,15 +119,26 @@ html, body {
 }
 
 #gallery {
-    
+    display: flex;
+    flex-direction: column;
+    max-width: 1450px;
+    margin: 0 auto;
 }
 
 .gallery-item {
-    width: calc(100% - 40px);
-    padding: 20px;
-    height: 400px;
     display: none;
-    border-bottom: solid 1px white;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 45px 0px;
+    min-height: 340px;
+    height: auto;
+    gap: 40px;
+    align-items: stretch;
+    border-bottom: 1px solid #383838;
+}
+
+.gallery-item:first-child {
+    border-top: 1px solid #383838;
 }
 
 .gallery-item.selected {
@@ -115,53 +146,383 @@ html, body {
     flex-direction: row;
 }
 
-.gallery-item * {
-    margin: 5px;
-}
-
-.award-wrapper {
-    position: relative;
-    flex: 1;
-}
-
-.award-wrapper > div {
-    position: absolute;
-    overflow-x: auto;
-    width: 100%;
-    height: 100%;
-}
-
-.award-list {
-    display: flex;
-    flex-direction: row;
-    margin: 0px;
-}
-
-.award-list > div {
-    height: 100%;
-    width: content;
-    position: relative;
-    margin: 0px;
-}
-
-.award-list > img {
-    /* position: absolute; */
-    height: 200px;
-    filter: invert();
+.gallery-item > * {
     margin: 0px;
 }
 
 .gallery-embed {
     position: relative;
-    aspect-ratio: 16/9;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+    flex: 1.15;
+    min-width: 0;
+    align-self: center;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #080808;
 }
 
 .gallery-embed iframe {
-    aspect-ratio: 16/9 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9 !important;
+    border: none;
 }
+
+.gallery-item > div:nth-child(2) {
+    flex: 0.85;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 0px;
+}
+
+.gallery-item h1 {
+    margin: 0px 0px 10px;
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+}
+
+.gallery-item h2 {
+    margin: 0px 0px 20px;
+    color: #7898d0;
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.gallery-item p {
+    margin: 0px 0px 25px;
+    color: #c5c5c5;
+    font-size: 0.95em;
+    line-height: 1.85;
+    max-width: 580px;
+}
+
+/**********/
+/* AWARDS */
+/**********/
+
+.award-wrapper {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 65px;
+    margin-top: auto;
+}
+
+.award-wrapper > div {
+    position: absolute;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #555 transparent;
+}
+
+.award-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: 0px;
+    height: 100%;
+}
+
+.award-list > img {
+    height: 90px;
+    width: auto;
+    max-width: 130px;
+    object-fit: contain;
+    filter: invert();
+    opacity: 0.9;
+    margin: 0px;
+    transition: opacity 0.2s;
+}
+
+.award-list > img:hover {
+    opacity: 1;
+}
+
+/************/
+/* RESPONSIVE */
+/************/
+
+@media (max-width: 900px) {
+    #portfolio {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .gallery-item {
+        gap: 25px;
+        padding: 35px 0px;
+    }
+
+    .gallery-item h1 {
+        font-size: 1.7em;
+    }
+
+    .gallery-item p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 650px) {
+    #portfolio {
+        padding: 25px 20px 55px;
+    }
+
+    #portfolio > h1 {
+        font-size: 2.3em;
+    }
+
+    #filter-list {
+        margin: 25px 0px 30px;
+        max-width: 100%;
+    }
+
+    #filter-list > div {
+        padding: 12px 14px;
+        font-size: 0.75em;
+    }
+
+    .gallery-item.selected {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .gallery-item {
+        padding: 30px 0px;
+    }
+
+    .gallery-embed {
+        flex: none;
+        width: 100%;
+    }
+
+    .gallery-item > div:nth-child(2) {
+        flex: none;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .gallery-item h1 {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+
+    .gallery-item h2 {
+        margin-bottom: 14px;
+        font-size: 0.78em;
+    }
+
+    .gallery-item p {
+        font-size: 0.9em;
+        line-height: 1.75;
+        margin-bottom: 18px;
+    }
+
+    .award-wrapper {
+        min-height: 60px;
+        flex: none;
+    }
+
+    .award-list > img {
+        height: 70px;
+    }
+}
+
+
+/*******************/
+/* RECENT ARTICLE */
+/*******************/
+
+#recent-article {
+    padding: 55px 8%;
+    background-color: #1b1b1b;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+}
+
+#recent-article > div {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#recent-article h3 {
+    margin: 0px 0px 15px;
+    color: #7898d0;
+    font-size: 0.8em;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+#recent-article h2 {
+    margin: 0px;
+    font-size: 1.8em;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+#recent-article a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#recent-article a:hover {
+    color: #91afe2;
+}
+
+#recent-article p {
+    margin: 12px 0px 0px;
+    max-width: 750px;
+    color: #aaa;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+    #recent-article {
+        padding: 35px 25px;
+    }
+
+    #recent-article h2 {
+        font-size: 1.4em;
+    }
+
+    #recent-article p {
+        font-size: 0.88em;
+    }
+}
+
+
+/*******************/
+/* RECENT ARTICLE */
+/*******************/
+
+#recent-article {
+    padding: 45px 8%;
+    background-color: #181818;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+}
+
+#recent-article > div {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#recent-article h3 {
+    margin: 0px 0px 12px;
+    color: #91afe2;
+    font-size: 0.85em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#recent-article h2 {
+    margin: 0px;
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1.35;
+}
+
+#recent-article a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#recent-article a:hover {
+    color: #91afe2;
+}
+
+#recent-article p {
+    margin: 12px 0px 0px;
+    max-width: 750px;
+    color: #aaa;
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+#recent-article .article-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: #91afe2;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#recent-article .article-link:hover {
+    color: white;
+}
+
+@media (max-width: 650px) {
+    #recent-article {
+        padding: 35px 25px;
+    }
+
+    #recent-article h2 {
+        font-size: 1.5em;
+    }
+
+    #recent-article p {
+        font-size: 0.88em;
+    }
+}
+
+
+/**********************/
+/* ADDITIONAL NAVIGATION */
+/**********************/
+
+#extra-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+    background-color: #121212;
+}
+
+#extra-navigation a {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: rgb(17, 54, 135);
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#extra-navigation a:hover {
+    background-color: rgb(10, 81, 182);
+}
+
+@media (max-width: 500px) {
+    #extra-navigation {
+        gap: 12px;
+        padding: 25px 15px;
+    }
+
+    #extra-navigation a {
+        padding: 12px 18px;
+        font-size: 0.85em;
+    }
+}
+
 
     </style>
 <script>
@@ -258,6 +619,31 @@ html, body {
             }
         </script>
     </div>
+    
+
+<!-- Recent Article -->
+<div id="recent-article">
+    <div>
+        <h3>Recent Article</h3>
+        <h2>
+            <a href="ARTICLE_URL" target="_blank" rel="noopener noreferrer">
+                Patrick Stewart, Not the Gay One, Dies at 86
+            </a>
+        </h2>
+        <p>
+            Beloved actor Sir Pat Stew, who did Star Trek and some other stuff, died (sad).
+        </p>
+        <a class="article-link" href="ARTICLE_URL" target="_blank" rel="noopener noreferrer">
+            READ ARTICLE →
+        </a>
+    </div>
+</div>
+
+<div id="extra-navigation">
+    <a href="blog.html">Read More</a>
+    <a href="film.html">Film Work</a>
+</div>
+    
     <!-- Portfolio -->
     <div id="portfolio">
         <h1 style="text-align: center; color: white; font-size: 3em; margin-bottom: 0px;">Selected Works</h1>
