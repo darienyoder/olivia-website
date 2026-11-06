@@ -227,7 +227,11 @@
         </div>
 
         <div id="article-meta">
-            By Olivia Dal Pra
+            {% if page.slug == "private-planes" %}
+                By Maximillian Sinclair
+            {% else %}
+                By Olivia Dal Pra
+            {% endif %}
         </div>
 
         <div id="article-body">
