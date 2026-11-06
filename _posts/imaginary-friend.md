@@ -1,0 +1,5 @@
+---
+layout: post
+title:  "Trump Introduces Imaginary Friend Zohran Mamdani"
+---
+WHICHITA, KS - With the pulse of Halloween just beginning to wane, hormonal 14-year-old Mason Smith woke up this morning to discover the Christmas tree already up. “I know Mom’s an adult and can choose any holiday she wants to decorate for, but it’s getting out of hand.” he said, still dressed in his Superman costume from trick-or-treat the night before, “After Mom and Dad split up, she was all in on the Fourth of July. I liked it, and so did Mom. We went to parties, cookouts, saw the fireworks, it was a blast. But then that was over and all of a sudden, Labor Day’s the big thing. Not as fun, but sensible and thoughtful. Now she’s not even waiting until the last holiday is out the door before putting on airs for a new one. I get that she’s lonely, but this shit just makes her look like an easy target for any lame holiday.” Smith added that in contrast to his mother’s revolving door of holidays, his father is committed to observing Valentine’s Day year-round, and has been celebrating by sending his mother chocolates and flowers almost daily since early August.

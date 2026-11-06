@@ -1,0 +1,5 @@
+---
+layout: post
+title:  "Pete Hegseth On The Iran Conflict: ‘Indubitably Horrendous, Tempestuous, Dire’"
+---
+WASHINGTON, DC - Casting his orbs down at his newly-acquired thesaurus, the antiliquent Secretary of Skirmishes Pete Hegseth gave a statement to the press today on the Iran Conflict. “This predicament is most indubitably horrendous, tempestuous, and dire, but I wouldn’t classify it as anything greater.” he vociferated, taking a second to thumb through the menagerie of pages within the tome, “Iran is, at present, quite peevish, and we’ve had to engage in a little dusting for a plethora of reasons. The conundrum at the Strait of Hormuz is irksome, and the slight glitch is made a modicum more delicate with the rising number of American soldiers that have shuffled off this mortal coil. But henceforth, the Iranians have a great comeuppance in store. You know what they say: we may have lost the battle, but we will win the…spat.” Hegseth recounted America’s history of successful squabbles, from the Revolutionary Quarrel to the Bickering in Afghanistan, and promised he was hard at work to prevent World Tiff III.

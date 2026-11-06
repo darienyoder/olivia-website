@@ -1,0 +1,5 @@
+---
+layout: post
+title:  "Millions Of Americans Prepared to Relent, Do Nothing At The Pump"
+---
+WASHINGTON, DC - In light of the crisis at the Strait of Hormuz, we’ve received reports that millions of Americans are prepared to do nothing and relent at the pump. This means a good portion of the population is currently planning driving up to the gas station, seeing the price on the sign, getting peeved, then not doing a goddamn thing about it.  “What am I gonna do, not get gas?” said local commuter Sam Frindle, who drives a two hour round trip to work everyday, “No, I’m gonna bitch about it to my friends and family,maybe make a post on facebook, and bend over like the good little consumer I am.” This trend is reportedly continuing across the country and seeping into other industries, with more Americans opting to be assfucked by the prices of everything from eggs to electricity. It’s unclear at this time how Iran learned that Americans rely heavily on gas, utilities, and food, or that most of them would just shut up and take those high prices on the chin.

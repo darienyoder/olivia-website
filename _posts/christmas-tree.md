@@ -1,0 +1,5 @@
+---
+layout: post
+title:  "Trump Introduces Imaginary Friend Zohran Mamdani"
+---
+WASHINGTON, DC - In an effort to raise his approval ratings and offer transparency to the public, President Trump invited the media into the Oval Office to introduce them to his new imaginary friend, Zohran Mamdani. “The idea for Zohran came to me the other day when I picked up the phone and his voice came out,” said the President, “He had all these great things to say, and I knew they could only have come from the great mind that is Donald J. Trump. I told him he’d better appear soon, we’ve got work to do!” Trump told the press that his new Zohran Mamdani character is a smiley, good-looking guy with a killer spray tan, and also just so happens to be the mayor of New York City, where President Trump is from. Mamdani was even able to speak to the press himself, stating “I am excited to be working as a figment of President Trump’s imagination to make New York more affordable for all.” Trump, happy with the meeting progress, has since expressed displeasure with his previous governmental creations, such as J.D. Vance and Benjamin Netanyahu.

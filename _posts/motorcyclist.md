@@ -1,0 +1,5 @@
+---
+layout: post
+title:  "Showboating Motorcyclist Shot 37 Times In Someone’s Head"
+---
+LANSING, MI - In a tragedy on I-96, showboating motorcyclist and overall annoyance Travis Flinch was shot a total of thirty-seven times in someone’s head. “This is an unfortunately common case that could’ve been avoided by safe road practices,” said spokesperson for the local police Lt. Penelope Mossa, adding that if Flinch hadn’t been popping wheelies in the passing lane, none of the people he passed would have fantasized about him being turned into Swiss cheese. Witnesses to the crime revealed they also shot Flinch a number of times in their heads, as well as maimed him, strangled him within an inch of his life, and crushed him under the wheels of their mid-sized sedans. With the suspect of the original incident still at large, police say to be on the lookout for someone who’s just fucking trying to get to work. Police believe the perpetrator in this case is the same as the imaginary decapitation of the Ford F-150 driver last month, after the victim refused to turn off his LED  high-beams.
