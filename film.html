@@ -574,15 +574,14 @@ html, body {
 
     <!-- Portfolio -->
     <div id="portfolio">
-        <h1 id="main-title" style="display: block; text-align: center; color: white; font-size: 3em; margin-bottom: 0px;">Selected Works</h1>
-        <h1 id="film-title" style="display: none; text-align: center; color: white; font-size: 3em; margin-bottom: 0px;">My favorite film and comedy projects I've had a hand in writing to date</h1>
-        <h1 id="sketch-title" style="display: none; text-align: center; color: white; font-size: 3em; margin-bottom: 0px;">My favorite sketches from my time at TV2</h1>
+        <h1 style="display: block; text-align: center; color: white; font-size: 3em; margin-bottom: 0px;">Selected Works</h1>
+        <h2 style="display: none; text-align: center; color: white; font-size: 2em; margin-bottom: 0px;">My favorite film and comedy projects I've had a hand in writing to date</h2>
         <!-- Navigation -->
         <div class="center-flex" style="user-select: none;">
             <div id="filter-list" class="row-flex">
-                <div onclick="set_filter(this.innerText); document.getElementById('main-title').style.display = 'block'; document.getElementById('film-title').style.display = 'none'; document.getElementById('sketch-title').style.display = 'none';">All</div>
-                <div onclick="set_filter(this.innerText); document.getElementById('main-title').style.display = 'none'; document.getElementById('film-title').style.display = 'block'; document.getElementById('sketch-title').style.display = 'none';">Film</div>
-                <div onclick="set_filter(this.innerText); document.getElementById('main-title').style.display = 'none'; document.getElementById('film-title').style.display = 'none'; document.getElementById('sketch-title').style.display = 'block';">Sketch</div>
+                <div onclick="set_filter(this.innerText);">All</div>
+                <div onclick="set_filter(this.innerText);">Film</div>
+                <div onclick="set_filter(this.innerText);">Sketch</div>
             </div>
         </div>
         <!-- Gallery -->
