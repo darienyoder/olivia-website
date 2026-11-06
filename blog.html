@@ -355,75 +355,30 @@ html, body {
     <main id="posts">
 
         <!-- Post -->
+         {% for post in site.posts %}
+            <a class="post" href="{{ post.url }}">
 
-        <a class="post" href="post.html">
+                <div class="post-image">
+                    <img src="assets/images/blog/post-1.jpg"
+                        alt="Post 1 thumbnail">
+                </div>
 
-            <div class="post-image">
-                <img src="assets/images/blog/post-1.jpg"
-                     alt="Post 1 thumbnail">
-            </div>
+                <div class="post-content">
 
-            <div class="post-content">
+                    <h2 class="post-title">
+                        {{ post.title }}
+                    </h2>
 
-                <h2 class="post-title">
-                    Patrick Stewart, Not the Gay One, Dies at 86
-                </h2>
+                    <p class="post-description">
+                        Beloved actor Sir Pat Stew, who did Star Trek and some other stuff, died (sad).
+                    </p>
 
-                <p class="post-description">
-                    Beloved actor Sir Pat Stew, who did Star Trek and some other stuff, died (sad).
-                </p>
+                    <span class="post-read">READ ARTICLE →</span>
 
-                <span class="post-read">READ ARTICLE →</span>
+                </div>
 
-            </div>
-
-        </a>
-
-        <a class="post" href="post.html">
-
-            <div class="post-image">
-                <img src="assets/images/blog/post-1.jpg"
-                     alt="Post 1 thumbnail">
-            </div>
-
-            <div class="post-content">
-
-                <h2 class="post-title">
-                    Patrick Stewart, Not the Gay One, Dies at 86
-                </h2>
-
-                <p class="post-description">
-                    Beloved actor Sir Pat Stew, who did Star Trek and some other stuff, died (sad).
-                </p>
-
-                <span class="post-read">READ ARTICLE →</span>
-
-            </div>
-
-        </a>
-
-        <a class="post" href="post.html">
-
-            <div class="post-image">
-                <img src="assets/images/blog/post-1.jpg"
-                     alt="Post 1 thumbnail">
-            </div>
-
-            <div class="post-content">
-
-                <h2 class="post-title">
-                    Patrick Stewart, Not the Gay One, Dies at 86
-                </h2>
-
-                <p class="post-description">
-                    Beloved actor Sir Pat Stew, who did Star Trek and some other stuff, died (sad).
-                </p>
-
-                <span class="post-read">READ ARTICLE →</span>
-
-            </div>
-
-        </a>
+            </a>
+        {% endfor %}
 
     </main>
 
