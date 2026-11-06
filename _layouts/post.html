@@ -223,8 +223,7 @@
         <h2>{{ page.title }}</h2>
 
         <div id="article-image">
-            <img src="/assets/images/articles/{{ page.slug }}.png"
-                 alt="Article header image">
+            <img src="/assets/images/articles/{{ page.slug }}.png" onerror='this.src = "/assets/images/articles/poems.png"'>
         </div>
 
         <div id="article-meta">

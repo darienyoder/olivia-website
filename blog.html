@@ -361,7 +361,7 @@ html, body {
             <a class="post" href="{{ post.url }}">
 
                 <div class="post-image">
-                    <img src="/assets/images/articles/{{ post.slug }}.png">
+                    <img src="/assets/images/articles/{{ post.slug }}.png" onerror='this.src = "/assets/images/articles/poems.png"'>
                 </div>
 
                 <div class="post-content">
