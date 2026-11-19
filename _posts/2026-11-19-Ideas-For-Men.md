@@ -2,32 +2,23 @@
 layout: post
 title: "Ideas For Men To Celebrate International Men's Day"
 ---
-Wake up and forget what day it is. Have a woman in your life remind you.
-<br> Call your Mom and thank her for passing on her good hair genetics. <br>
-Call your Dad and exchange grunts about your favorite sports teams. This will be
-one of the deepest conversations you two will ever have. <br> Make plans with
-your college buddies that you haven’t seen in over three years. They are your
-best friends. <br> Shower with your special soap; shampoo, conditioner, body-
-wash, car wax, and drain cleaner all in one. <br> Go to the bathroom. Leave the
-toilet seat pointed to the heavens in a salute to men’s aim everywhere. <br>
-Perform an audit of your “equipment.” Ignore the temptation of the Bluechew ads
-your algorithm keeps feeding you. <br> Pick out a movie to watch that has a male
-main character. Give up after realizing there are too many to choose from. <br>
-Go outside and interrupt a stranger to give them advice. Assume they will find
-your opinion on their personal life useful and intelligent. <br> Imagine
-yourself winning a tennis match against Serena Williams. <br> Imagine yourself
-winning a pickup game against Caitlin Clark. <br> Imagine yourself drinking the
-rest of the six-pack you have in the fridge. Decide this dream is more in your
-wheelhouse. <br> Wallow in your belief that you could’ve been a professional
-athlete, if not for “the injury.” <br> Cry. Today is the one day a year men are
-allowed to feel emotions. <br> (Addendum: good emotions, such as pride, anger,
-or implementing tariffs, are free to be felt year-round.) <br> Wonder why there
-is no “International Women’s Day”, to your knowledge.
-<br> Remember that women get Mother’s Day and wedding anniversaries. Feel better
-knowing those days cover all the bases. <br> Walk around alone at night.
-Patriarchy is best experienced under the stars. <br> Try to feel the drastic
-shift in the cosmos that marks the beginning of respect for men as complex
-humans. Realize everything feels the same as before. <br> Go to bed excited for
-another International Men’s Day tomorrow.
-
-
+- Wake up and forget what day it is. Have a woman in your life remind you.
+- Call your Mom and thank her for passing on her good hair genetics. 
+- Call your Dad and exchange grunts about your favorite sports teams. This will be one of the deepest conversations you two will ever have.
+- Make plans with your college buddies that you haven’t seen in over three years. They are your best friends.
+- Shower with your special soap; shampoo, conditioner, body-wash, car wax, and drain cleaner all in one.
+- Go to the bathroom. Leave the toilet seat pointed to the heavens in a salute to men’s aim everywhere.
+- Perform an audit of your “equipment.”
+- Ignore the temptation of the Bluechew ads your algorithm keeps feeding you.
+- Pick out a movie to watch that has a male main character. Give up after realizing there are too many to choose from.
+- Go outside and interrupt a stranger to give them advice. Assume they will find your opinion on their personal life useful and intelligent.
+- Imagine yourself winning a tennis match against Serena Williams.
+- Imagine yourself winning a pickup game against Caitlin Clark.
+- Imagine yourself drinking the rest of the six-pack you have in the fridge. Decide this dream is more in your wheelhouse.
+- Wallow in your belief that you could’ve been a professional athlete, if not for “the injury.”
+- Cry. Today is the one day a year men are allowed to feel emotions.  (Addendum: good emotions, such as pride, anger, or implementing tariffs, are free to be felt year-round.)
+- Wonder why there is no “International Women’s Day”, to your knowledge.
+- Remember that women get Mother’s Day and wedding anniversaries. Feel better knowing those days cover all the bases.
+- Walk around alone at night. Patriarchy is best experienced under the stars.
+- Try to feel the drastic shift in the cosmos that marks the beginning of respect for men as complex humans. Realize everything feels the same as before.
+- Go to bed excited for another International Men’s Day tomorrow.
