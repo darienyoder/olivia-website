@@ -1,12 +1,9 @@
-```
+\---
+
 layout: post
-```
-
-```
 title: "Ideas For Men To Celebrate International Men's Day"
-```
 
-```
+\---
     Wake up and forget what day it is. Have a woman in your life remind you.
 <br> Call your Mom and thank her for passing on her good hair genetics. <br>
 Call your Dad and exchange grunts about your favorite sports teams. This will be
@@ -28,14 +25,11 @@ athlete, if not for “the injury.” <br> Cry. Today is the one day a year men 
 allowed to feel emotions. <br> (Addendum: good emotions, such as pride, anger,
 or implementing tariffs, are free to be felt year-round.) <br> Wonder why there
 is no “International Women’s Day”, to your knowledge.
-```
-
-```
 <br> Remember that women get Mother’s Day and wedding anniversaries. Feel better
 knowing those days cover all the bases. <br> Walk around alone at night.
 Patriarchy is best experienced under the stars. <br> Try to feel the drastic
 shift in the cosmos that marks the beginning of respect for men as complex
 humans. Realize everything feels the same as before. <br> Go to bed excited for
 another International Men’s Day tomorrow.
-```
+
 
