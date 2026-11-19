@@ -1,9 +1,7 @@
-\---
-
+---
 layout: post
 title: "Ideas For Men To Celebrate International Men's Day"
-
-\---
+---
     Wake up and forget what day it is. Have a woman in your life remind you.
 <br> Call your Mom and thank her for passing on her good hair genetics. <br>
 Call your Dad and exchange grunts about your favorite sports teams. This will be
